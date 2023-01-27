@@ -1,12 +1,12 @@
 
-let paintColor;
+let paintColor; //variable used to control boolean
 
 function setup() {
   createCanvas(1100, 1000);
   background(255); //white background
 }
 
-function draw() {
+function draw() { 
 
   push(); //controls the stroke color for the palette boxes
   stroke(255); //white outline
@@ -104,7 +104,6 @@ function draw() {
       line(mouseX, mouseY, pmouseX, pmouseY);
     }
   }
-
 }
 
 function click (x, y){ //this function is used to issue the specifc location clicked will affect anything
