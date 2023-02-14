@@ -42,8 +42,8 @@ function reset(){
 }
 
 function draw() {
-  switch(game.state){
-    case GameState.Start:
+  switch(game.state){ 
+    case GameState.Start: //start screen
       background(0,160,255);
       fill(255);
       textFont('Georgia');
@@ -59,7 +59,7 @@ function draw() {
 
       break;
 
-    case GameState.Rules:
+    case GameState.Rules: //rules screen
       background(0,160,255);
       fill(255);
       textFont('Georgia');
@@ -85,7 +85,7 @@ function draw() {
 
       break;
 
-    case GameState.Playing:
+    case GameState.Playing: //game screen
       background(100,255,120);
 
       for(let i=0; i <animations.length; i++){
@@ -104,7 +104,7 @@ function draw() {
 
       break;
 
-      case GameState.GameOver:
+      case GameState.GameOver: //game over screen
         game.maxScore = max(game.score, game.maxScore);
 
         background(50);
@@ -127,7 +127,7 @@ function draw() {
 }
 
 function keyPressed(){ 
-  switch(game.state){
+  switch(game.state){ 
     case GameState.Start:
       game.state = GameState.Rules;
       break;
@@ -140,7 +140,6 @@ function keyPressed(){
       reset();
       game.state = GameState.Start;
       break; 
-
   }
 }
 
@@ -192,9 +191,9 @@ class BugAnimation {
       rotate(180);
     }
     scale(1, this.xDirection);
-    
     image(this.bugSheet, 0, 0, this.sw, this.sh, this.u * this.sw + this.offsetX, this.v * this.sh + this.offsetY, this.sw, this.sh);
     pop();
+
     let proportionalFramerate = round(frameRate() / this.framerate);
     if (frameCount % proportionalFramerate == 0) {
       this.currentFrame++;
@@ -232,7 +231,7 @@ class BugAnimation {
   }
 
   contains(x,y) {
-    //rect(-10,-15,20,30); 
+    //rect(-10,-15,20,30); <-- found dimensions of ants
     let insideX = x >= this.dx - 10 && x <= this.dx + 10;
     let insideY = y >= this.dy - 15 && y <= this.dy + 15;
     return insideX && insideY;
