@@ -38,7 +38,7 @@ function draw() {
 
 }
 
-function keyPressed(){
+function keyPressed(){ 
   animation1.keyPressed();
   animation2.keyPressed();
   animation3.keyPressed();
@@ -63,13 +63,13 @@ class WalkingAnimation {
     this.u = 0;
     this.v = 0;
     this.animationLength = animationLength;
-    this.currentFrame = 0;
-    this.moving = 0;
+    this.currentFrame = 0; //brings standing postion (controls frame of motion)
+    this.moving = 0; 
     this.xDirection = 1;
 
   }
 
-  draw(){
+  draw(){ //creates the character animation
     if (this.moving != 0){
       this.u = this.currentFrame % this.animationLength; 
     } 
@@ -77,7 +77,7 @@ class WalkingAnimation {
       this.u = 0;
     }
 
-    push();
+    push(); 
     translate(this.dx, this.dy);
     scale(this.xDirection, 1);
     image(this.spriteSheet, 0, 0, this.sw, this.sh, this.u * this.sw, this.v * this.sh, this.sw, this.sh);
@@ -90,7 +90,7 @@ class WalkingAnimation {
 
   }
 
-  keyPressed(){
+  keyPressed(){ //controls the movement of the animation
     if(keyCode === RIGHT_ARROW){
       this.moving = 1;
       this.xDirection = 1;
@@ -103,7 +103,7 @@ class WalkingAnimation {
     }
   }
 
-  keyReleased(){
+  keyReleased(){ //stops animation movement
     if (keyCode === RIGHT_ARROW || LEFT_ARROW){
       this.moving = 0;
     }
