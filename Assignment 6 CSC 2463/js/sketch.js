@@ -1,4 +1,4 @@
-const synth = new Tone.Synth();
+const synth = new Tone.PluckSynth();
 
 let notes = {
 
