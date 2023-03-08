@@ -1,4 +1,4 @@
-let initTone = true;
+
 
 const synth = new Tone.PluckSynth();
 
@@ -61,10 +61,3 @@ function keyPressed(){
   synth.triggerAttackRelease(whatNote, 0.4);
 }
 
-function keyPressed(){ //allows the browser to implement audio [not all browsers need this]
-  if(key === ' ' && initTone === true){
-    console.log('spacebar pressed');
-    Tone.start();
-    initTone = false;
-  }
-}
