@@ -48,6 +48,7 @@ function setup() {
 
 function draw() {
   background(50, 80, 160);
+  text('click to start audio!', 290, 390);
 
   if(effect == true){
     image(cloud, 175, 150, 275, 300, 0 + 750 * currentFrame, 100, 700, 0);
