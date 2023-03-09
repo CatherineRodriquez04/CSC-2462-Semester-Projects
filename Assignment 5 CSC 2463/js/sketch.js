@@ -1,4 +1,5 @@
 
+let initTone = true;
 let sounds = new Tone.Players({
   "Drip": "assets/Droplet.wav",
   "Drum Roll Please...": "assets/Drums.wav",
@@ -10,7 +11,6 @@ const delay = new Tone.PingPongDelay("4n", 0.2);
 
 let soundNames = ["Drip", "Drum Roll Please...", "He's Snoring too LOUD", "Time to Get Up!"];
 let buttons = [];
-Tone.start();
 
 let dSlider;
 let pSlider;
@@ -51,4 +51,11 @@ function draw() {
 
 function buttonSound(whichSound){
   sounds.player(whichSound).start();
+}
+
+function mousePressed(){
+  if(initTone === true){
+    Tone.start();
+    intitTone = false;
+  }
 }
