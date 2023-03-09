@@ -56,6 +56,6 @@ function buttonSound(whichSound){
 function mousePressed(){
   if(initTone === true){
     Tone.start();
-    intitTone = false;
+    initTone = false;
   }
 }
