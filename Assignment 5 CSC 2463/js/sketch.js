@@ -10,6 +10,7 @@ const delay = new Tone.PingPongDelay("4n", 0.2);
 
 let soundNames = ["Drip", "Drum Roll Please...", "He's Snoring too LOUD", "Time to Get Up!"];
 let buttons = [];
+Tone.start();
 
 let dSlider;
 let pSlider;
