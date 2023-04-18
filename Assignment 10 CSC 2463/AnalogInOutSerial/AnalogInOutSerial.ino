@@ -1,23 +1,10 @@
-/*
-  Analog input, analog output, serial output
 
-  Reads an analog input pin, maps the result to a range from 0 to 255 and uses
-  the result to set the pulse width modulation (PWM) of an output pin.
-  Also prints the results to the Serial Monitor.
-
-  The circuit:
-  - potentiometer connected to analog pin 0.
-    Center pin of the potentiometer goes to the analog pin.
-    side pins of the potentiometer go to +5V and ground
-  - LED connected from digital pin 9 to ground through 220 ohm resistor
-
-  created 29 Dec. 2008
-  modified 9 Apr 2012
-  by Tom Igoe
-
-  This example code is in the public domain.
-
-  https://www.arduino.cc/en/Tutorial/BuiltInExamples/AnalogInOutSerial
+/* 
+Game Details:
+This two person game’s objective is to have one player guess when the other player’s LED light is at a brightness of 80 or above. 
+The first player is to screw the potentiometer back and forth to bring the white LED light to difference brightness levels. 
+When the brightness reaches 80 or above and the second player presses their button a green LED light will turn on. 
+If the light has not reached that brightness level when the second player presses the button a buzzer will go off. 
 */
 
 //potentiometer
