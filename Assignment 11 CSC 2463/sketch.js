@@ -9,7 +9,7 @@ let sensorData = {};
 const encoder = new TextEncoder();
 const decorder = new TextDecoder();
 
-let activationState = { active: false };
+//let activationState = { active: false };
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -29,18 +29,18 @@ function setup() {
     button.style('font-size', '15px');
     button.style('background-color', 'white');
 
-    slider = createSlider(0, 255, 127);
-    slider.position(50, 175);
-    slider.style('width', '300px');
+    // slider = createSlider(0, 255, 127);
+    // slider.position(50, 175);
+    // slider.style('width', '300px');
   }
 }
 
-function keyTyped() {
-  if (key === 'a') {
-    activationState.active = !activationState.active;
-    serialWrite(activationState);
-  }
-}
+// function keyTyped() {
+//   if (key === 'a') {
+//     activationState.active = !activationState.active;
+//     serialWrite(activationState);
+//   }
+// }
 
 let color
 try {color = value;}
@@ -56,22 +56,22 @@ function draw() {
     serialRead();
   }
 
-  if (activationState.active) {
-    text("cm: " + parseInt(sensorData) , 10, 100);
-    text("slider: "+ slider.value(),10,150);
-  }
-  if (writer) {
-    writer.write(new Uint8Array([slider.value()]));
+  // if (activationState.active) {
+  //   text("cm: " + parseInt(sensorData) , 10, 100);
+  //   text("slider: "+ slider.value(),10,150);
+  // }
+  // if (writer) {
+  //   writer.write(new Uint8Array([slider.value()]));
  
-   }
+  //  }
 }
 
-function serialWrite(jsonObject) {
-  if (writer) {
-   writer.write(new Uint8Array([slider.value()]));
+// function serialWrite(jsonObject) {
+//   if (writer) {
+//    writer.write(new Uint8Array([slider.value()]));
 
-  }
-}
+//   }
+// }
 
 async function serialRead() {
   while(true) {

@@ -1,14 +1,14 @@
 
-int LEDpin = 3;
-int analogInPin = A0;
+int LEDpin = 5;
+int analogInPin = A4;
 int analogOutPin = 9;
 
 int sensorValue = 0;        // value read from the pot
 int outputValue = 0;        // value output to the PWM (analog out)
-int sensorValue2 = 0;        // value read from the pot
-int outputValue2 = 0;        // value output to the PWM (analog out)
+//int sensorValue2 = 0;        // value read from the pot
+//int outputValue2 = 0;        // value output to the PWM (analog out)
 
-int RandoNum = random(0,1023);
+//int RandoNum = random(0,1023);
 
 void setup() {
   // initialize serial communications at 9600 bps:
@@ -17,11 +17,11 @@ void setup() {
  }
 
 void loop() {
-byte brightness;
-if(Serial.available()){
-  brightness = Serial.read();
-  analogWrite(LEDpin, brightness);
-}
+// byte brightness;
+// if(Serial.available()){
+//   brightness = Serial.read();
+//   analogWrite(LEDpin, brightness);
+// }
   
   // read the analog in value:
   sensorValue = analogRead(analogInPin);
