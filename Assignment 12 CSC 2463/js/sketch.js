@@ -1,5 +1,13 @@
 
-//Video:
+//Video: https://youtube.com/shorts/cauKnR9lIow
+
+/*Description:
+The joystick moves a cursor on the screen to allow the user to draw circled designs as a "paint brush". 
+A button is used to change the color of the "paint brush" at random.
+The joystick switch button is used as an eraser and triggers the LED light to turn off when the screen is clearing.
+*/
+
+
 
 //graphics
 let paintColor; //variable used to control boolean

@@ -7,6 +7,8 @@ let sounds = new Tone.Players({
   "Time to Get Up!": "assets/Wackey.mp3"
 })
 
+let asteroid;
+
 const delay = new Tone.PingPongDelay("4n", 0.2);
 
 let soundNames = ["Drip", "Drum Roll Please...", "He's Snoring too LOUD", "Time to Get Up!"];
@@ -24,6 +26,8 @@ function setup() {
     buttons[index] = createButton(word);
     buttons[index].position(index + 50, 50 + index*50);
     buttons[index].mousePressed( () => buttonSound(word))
+
+    asteroid = new Tone.Player('assets/Asteroid-Impact.wav').toDestination();
   })
 
   dSlider = createSlider(0, 1, 0.5, 0.05);
@@ -57,5 +61,11 @@ function mousePressed(){
   if(initTone === true){
     Tone.start();
     initTone = false;
+  }
+}
+
+function keyPressed(){
+  if(keyCode === ENTER){
+    asteroid.start();
   }
 }
